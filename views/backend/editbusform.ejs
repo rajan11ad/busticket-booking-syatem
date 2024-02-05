@@ -1,0 +1,53 @@
+<%- include('../common/head.ejs')-%>
+
+      <title> Admin Dashboard</title>
+   </head>
+   <body>
+      
+    <%- include('../common/header.ejs')-%>
+
+      <div class="container-fluid bg-side-nav">
+         <div class="row">
+            <div class="col-lg-2 sidebaare">
+              
+
+                <%- include('../common/sidebar.ejs')-%>
+            </div>
+            <div class="col-lg-10">
+
+              <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+               <h1 class="mb-2 mt-2">Update the info</h1>
+    
+    <form method="post" action="/editbusinfo/<%-updateddata.id %>">
+
+      <div class="mb-3 mt-3 row g-9 align-items-center">  
+        <div class="col col-lg-2"><label class="form-label">Bus Name </label></div>
+        <div class="col"><input type="text" name ="busname" class="form-control" value="<%-updateddata.busname %>"></div>
+      </div>
+
+      <div class="mb-3 mt-3 row g-9 align-items-center">           
+          <div class="col col-lg-2"><label class="form-label">Contact No</label></div>
+          <div class="col"><input type="text" name ="contactno" class="form-control"value="<%-updateddata.contactno %>"></div>
+      </div>
+
+      <div class=" mb-3 mt-3 row g-9 align-items-center ">
+        <div class="col col-lg-2"><label class="form-label">Bus Number</label></div>
+        <div class="col"><input type="text" name ="busnumber" class="form-control" value="<%-updateddata.busnumber %>"></div>
+      </div>
+      
+  
+      
+      
+     
+
+      <div class="mb-5 mt-3 align-items-center text-center"> 
+           <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+  </form>
+
+              <!-- end your content here -->
+              <%- include('../common/footer.ejs')-%>
+   </body>
+</html>

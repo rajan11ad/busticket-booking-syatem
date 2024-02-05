@@ -1,0 +1,60 @@
+<%- include('../common/head.ejs')-%>
+
+      <title> Admin Dashboard</title>
+   </head>
+   <body>
+      
+    <%- include('../common/header.ejs')-%>
+
+      <div class="container-fluid bg-side-nav">
+         <div class="row">
+            <div class="col-lg-2 sidebaare">
+              
+
+                <%- include('../common/sidebar.ejs')-%>
+            </div>
+            <div class="col-lg-10">
+
+              <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+               <h1 class="mb-2 mt-2">Add Page</h1>
+    
+    <form method="post" action="/addbusrouteform">
+
+      <div class="mb-3 mt-3 row g-9 align-items-center">  
+        <div class="col col-lg-2"><label class="form-label">Source </label></div>
+        <div class="col"><input type="text" name ="source" class="form-control" placeholder="enter the source address"></div>
+      </div>
+
+      <div class="mb-3 mt-3 row g-9 align-items-center">           
+          <div class="col col-lg-2"><label class="form-label">Destination</label></div>
+          <div class="col"><input type="text" name ="destination" class="form-control" placeholder="enter the destination address"></div>
+      </div>
+
+      <div class="mb-3 mt-3 row g-9 align-items-center">
+        <div class="col col-lg-2"><label class="form-label">Bus name</label></div>
+        <div class="col"><input type="text" name ="bus_name" class="form-control" placeholder="enter the bus Name"></div>
+      </div>
+      
+      <div class="mb-3 mt-3 row g-9 align-items-center">
+        <div class="col col-lg-2"><label class="form-label">Depature Date</label></div>
+        <div class="col"><input type="date" name ="depature_date" class="form-control" placeholder=""  min="2024-02-03"></div>
+      </div>
+      
+      <div class="mb-3 mt-3 row g-9 align-items-center"> 
+        <div class="col col-lg-2"><label class="form-label">Cost</label></div>
+        <div class="col"><input type="text" name="cost" class="form-control"  placeholder="enter the Cost"></div>
+      </div>
+      
+     
+
+      <div class="mb-5 mt-3 align-items-center text-center"> 
+           <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+  </form>
+
+              <!-- end your content here -->
+              <%- include('../common/footer.ejs')-%>
+   </body>
+</html>

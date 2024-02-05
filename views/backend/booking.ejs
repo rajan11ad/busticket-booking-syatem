@@ -1,0 +1,89 @@
+<%- include('../common/head.ejs')-%>
+      
+
+<title>Admin Dashboard</title>
+</head>
+<%- include('../common/header.ejs')-%>
+<body>
+
+
+
+
+
+<div class="container-fluid bg-side-nav">
+   <div class="row">
+      <div class="col-lg-2 sidebaare">
+         
+
+          <%- include('../common/sidebar.ejs')-%>
+
+      </div>
+      <div class="col-lg-10">
+
+        <div class="dashboard-content-area">
+          
+            <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+              
+
+
+
+    </div>
+
+    <h1>Booking  Status</h1>
+        
+ <a class="btn btn-success btn-md" href="/addbookingdata">Add New Booking</a> 
+ <br>
+ <br>
+               <table class="table table-bordered" id="datatable" width="100%" cellspacing="0">
+                  <thead>
+                     <tr>
+                        <th>Id</th>
+                        <th>Buse Number</th>
+                        <th> destination </th>
+                        <th>price</th>
+                        <th> source</th>
+                       <th>Action</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>raj k</td>
+                        <td>devs</td>
+                        <td> ejene</td>
+                        <td> ejene</td>
+                        <td> ejene</td>
+                     
+                       
+                       
+                       
+                        <td>
+                           <a class="btn btn-primary" href="/editbookingdata">Edit</a>                     
+                           <form style="display: inline;" action="/delete/raj k?_method=DELETE" method="POST">
+                              <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
+                           </form>
+                        </td>
+                     </tr>
+                    
+                  </tbody>
+               </table>
+                 
+
+         
+       
+
+              <!-- end your content here -->
+             </div>
+
+            </div>
+         </div>
+      </div>
+
+        <!-- end your content here -->
+       </div>
+
+      </div>
+   </div>
+</div>
+<%- include('../common/footer.ejs')-%>

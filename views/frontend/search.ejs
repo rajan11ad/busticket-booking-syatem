@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking - Ticket Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #5f68dd;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .book-now-btn {
+            background-color: #008CBA;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .book-now-btn:hover {
+            background-color: #00688B;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Bus Ticket Information</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Source Address</th>
+                <th>Destination</th>
+                <th>Bus_Name</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% search.forEach((saerchs)=>{ %>
+            <tr>
+            <td><%- saerchs.source %></td>
+             <td><%- saerchs.destinatin %></td>
+            <td><%- saerchs.bus_name %></td>
+            <td><%- saerchs.depature_date %></td>
+            <td><%- saerchs.cost %></td>
+            <td><a href="/seatbook?busroutes=<%- saerchs.id %>" class="book-now-btn">Book Now</a></td>
+
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+</body>
+</html>

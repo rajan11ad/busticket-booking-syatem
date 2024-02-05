@@ -1,0 +1,93 @@
+<%- include('../common/head.ejs')-%>
+      
+
+<title>Admin Dashboard</title>
+</head>
+<%- include('../common/header.ejs')-%>
+<body>
+
+
+
+
+
+<div class="container-fluid bg-side-nav">
+   <div class="row">
+      <div class="col-lg-2 sidebaare">
+         
+
+          <%- include('../common/sidebar.ejs')-%>
+
+      </div>
+      <div class="col-lg-10">
+
+        <div class="dashboard-content-area">
+          
+            <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+              
+
+
+
+    </div>
+
+    <h1>Route Status</h1>
+        
+ <a class="btn btn-success btn-md" href="/addbusrouteform/">Add Bus Route</a> 
+ <br>
+               <table class="table table-bordered" id="" width="100%" cellspacing="0">
+                  <thead>
+                     <tr>
+                        
+                        <th>Source</th>
+                        <th> destination </th>
+                        <th>Bus Name</th>
+                        <th> Departure</th>
+                       <th>Cost</th>
+                       <th> Action</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tbody>
+                        <% busroutes.forEach((busroute) => { %>
+                            <tr>
+                                <td><%-busroute.source %></td>
+                                <td><%- busroute. destinatin %></td>
+                                <td><%- busroute.bus_name %></td>
+                                <td><%- busroute.depature_date %></td>
+                                <td><%- busroute.cost %></td>
+
+
+                                <td>
+                                 <a class="btn btn-primary" href="/editbusroutedata/<%-busroute.id%>">Edit</a>  
+                     
+                                 <form style="display: inline;" action="/deletebusroute/<%-busroute.id %>" >
+                                    <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
+                                 </form>
+                              </td>
+                               
+                            </tr>
+                            <% }) %>
+
+   
+                  </tbody>
+               </table>
+                 
+
+         
+       
+
+              <!-- end your content here -->
+             </div>
+
+            </div>
+         </div>
+      </div>
+
+        <!-- end your content here -->
+       </div>
+
+      </div>
+   </div>
+</div>
+<%- include('../common/footer.ejs')-%>

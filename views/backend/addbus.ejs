@@ -1,0 +1,135 @@
+<%- include('../common/head.ejs')-%>
+      
+
+<title>Admin Dashboard</title>
+</head>
+<%- include('../common/header.ejs')-%>
+<body>
+
+
+
+
+
+<div class="container-fluid bg-side-nav">
+   <div class="row">
+      <div class="col-lg-2 sidebaare">
+         
+
+          <%- include('../common/sidebar.ejs')-%>
+
+      </div>
+      <div class="col-lg-10">
+
+        <div class="dashboard-content-area">
+          
+            <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+              
+               <style>
+                /* Style for the modal */
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: rgba(0,0,0,0.4);
+                    padding-top: 60px;
+                }
+        
+                /* Style for the smaller modal content */
+                .small-modal-content {
+                    background-color: #fefefe;
+                    margin: 5% auto;
+                    padding: 20px;
+                    border: 1px solid #888;
+                    width: 40%;
+                }
+        
+                /* Close button style */
+                .close {
+                    color: #aaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+            </style>
+        </head>
+        <body>
+        
+
+        
+            <!-- Button to open the smaller modal -->
+      
+        
+        </body>
+        </html>
+        
+
+
+
+    </div>
+
+    <h1>Bus Status</h1>
+
+
+    <a class="btn btn-success btn-md" href="/bus">Add New Bus</a> 
+    <br>
+    <br>
+
+               <table class="table table-bordered" id="" width="100%" cellspacing="0">
+                  <thead>
+                     <tr>
+                        <th>Bus Name</th>
+                        <th> Contact No</th>
+                        <th>Bus Number</th>
+                       <th>Action</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                    <% businfos.forEach((businfo)=>{ %>
+
+                        <tr>
+                            <td><%- businfo.busname %></td>
+                            <td><%- businfo.contact %></td>
+                           <td> <%- businfo.busnumber %></td>
+                            <td>
+                               <a class="btn btn-primary" href="/editbusinfo/<%-businfo.id %>">Edit</a>                     
+                               <a class="btn btn-danger ml-2" href="/delete/<%-businfo.id %>">Delete</a>   
+                              
+                           
+                            </td>
+                         </tr>
+
+
+
+
+                  <%  }) %>
+                    
+                   
+                     
+                  </tbody>
+               </table>
+                 
+
+         
+       
+
+              <!-- end your content here -->
+             </div>
+
+            </div>
+         </div>
+      </div>
+
+        <!-- end your content here -->
+       </div>
+
+      </div>
+   </div>
+</div>
+<%- include('../common/footer.ejs')-%>
