@@ -1,4 +1,4 @@
-const { datecheck, searchsd, userlogincheck } = require('../controller/userside/frontendcontroller')
+const { datecheck, searchsd, userlogincheck, searchticket } = require('../controller/userside/frontendcontroller')
 const { adduserdata, renderegister, userlogin } = require('../controller/userside/frontendcontroller')
 const  router = require('express').Router()
 
@@ -13,5 +13,7 @@ router.route("/login").get(userlogin).post(userlogincheck)
 
 // route of render and insert the data in to data base 
 router.route("/reg").get(renderegister).post(adduserdata)
+
+router.route("/ticketsearch").get(searchticket)
 
 module.exports = router

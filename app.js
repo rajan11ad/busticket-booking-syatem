@@ -1,12 +1,12 @@
 const express = require("express")
-const saltRounds = 10
-const session = require('express-session')
-const flash = require('connect-flash')
-const AdminSessions = require('./middleware/sessionconfig')
+
 const app = express()
-const jwt = require("jsonwebtoken")
+require('dotenv').config()
 const froroutes = require('./routes/frontendroute')
 const backendrout = require('./routes/backendroute')
+const cookieparser =require("cookie-parser")
+const jwt = require("jsonwebtoken")
+
 
 require("./model/index")
 
@@ -20,41 +20,42 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static(__dirname+'/public' ))
 app.use(express.static('/public/css'))
 app.use(express.static('/images'))
+app.use(cookieparser())
 
 
-// admin login
-app.use(session({
-  secret: 'secretkey', 
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true } 
-}))
-
-const ADMIN_USERNAME = 'rajan'
-const ADMIN_PASSWORD = 'rajan'
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME; // Use environment variables
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD
 app.post('/adminlogin', (req, res) => {
   const { username, password } = req.body
 
   
   if (username == ADMIN_USERNAME && password == ADMIN_PASSWORD) {
-      req.session.AdminSession = true
-      res.render("../views/backend/firstpage")
+    try {
+      var token = jwt.sign({ id: username }, process.env.JWT_SECRET, {
+        expiresIn: '1h' // Set an expiration time
+      });
+      res.cookie('token', token, { httpOnly: true, secure: true }); // Set secure cookies
+      res.render("../views/backend/firstpage");
+    } catch (error) {
+      console.error("Error generating token:", error);
+      res.status(500).send('Internal server error');
+    }
   } else {
-      res.status(401).send('invalid data')
+    res.status(401).send('Invalid data');
   }
-});
+})
+
+
 
 
 // logout process
 
 app.get('/admin/logout', (req, res) => {
-  req.session.destroy((err) => {
-      if (err) {
-          return res.status(500).send('Could not log out');
-      }
+
+  res.clearCookie('token')
       res.redirect('/adminlogin');
-  });
-});
+  })
+
 
 
 

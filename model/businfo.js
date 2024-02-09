@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       
       contact:{
-        type:DataTypes.INTEGER,
+        type:DataTypes.STRING,
        
         
         

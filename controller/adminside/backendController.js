@@ -13,10 +13,6 @@ exports.renderfirstpage= (req,res)=>{
     exports.addbus = async(req,res)=>{
 
         const addbusinfo = await businfos.findAll()
-      
-      
-      
-      
         res.render("../views/backend/addbus",{ businfos: addbusinfo})
       }
 
@@ -34,12 +30,13 @@ exports.renderfirstpage= (req,res)=>{
 
        exports.datainsert= async (req,res)=>{
 
-        const{busname,contactno,busnumber}=req.body
+        const{busname, contact, busnumber}=req.body
+       
 
-        if(!busname || !contactno || !busnumber){
+        if(!busname || !contact || !busnumber){
 
            res.send("all fields are required")
-        }else if (contactno.length != 10){
+        }else if (contact.length != 10){
           res.send("*Phone number should be of 10 digits!");
         }else if (typeof busname !== 'string' || !isNaN(busname)) {
           res.send('Source and destination must be strings and cannot be numbers.')
@@ -47,15 +44,15 @@ exports.renderfirstpage= (req,res)=>{
         console.log(req.body)
           await businfos.create({
         
-            busname:busname,
-        contact:contactno,
-         busnumber: busnumber
+            busname: busname,
+            contact: contact,
+            busnumber: busnumber
          
         
         
         
           })
-          res.redirect("addbus")
+          res.redirect("/addbus")
         
         }
       }
@@ -79,7 +76,7 @@ exports.routeform=(req,res)=>{
 
   exports.addbusroute =async (req, res)=>{
 
-    const{source, destination, bus_name, depature_date, cost} =req.body
+    const{source, destination, bus_name, depature_date, seat, cost} =req.body
     
   
   
@@ -88,33 +85,52 @@ exports.routeform=(req,res)=>{
   destinatin:destination,
    bus_name: bus_name,
   depature_date: depature_date,
+  seat: seat,
   cost:cost
   
   
   
   })
   
-  res.redirect("busroute")
+  res.redirect("/busroute")
   }
 
   // render the bus data update form
-  exports.busdataupdate = async (req,res)=>{
 
- 
-    const updatedata = req.params.id
 
-    console.log(updatedata)
-    const data= await businfos.findByPk(updatedata)
-      
-    
-    res.render("../views/backend/editbusform",{ dataupdates : data})
-        
-}
 
 // render the bus route update form
-exports.busrouteupdate = (req,res)=>{
-    res.render("../views/backend/editbusroute")
+exports.busrouteupdate = async (req,res)=>{
+  const busrouteid = req.params.id
+  console.log(busrouteid)
   
+  const busroutedata=  await busroutes.findByPk(busrouteid)
+  console.log(busroutedata)
+
+    res.render("../views/backend/editbusroute",{ busroutepass : busroutedata})
+  
+  }
+  exports.busroutedatapost=  async (req, res) => {
+    const busrouteid = req.params.id
+    
+    const { source, destination, bus_name, depature_date,seat, cost   } = req.body
+ console.log(busrouteid)
+    await busroutes.update({
+        source: source,
+        destinatin: destination,
+        bus_name: bus_name,
+        depature_date: depature_date,
+        seat:seat,
+        cost : cost
+
+  
+    },{
+        where :{
+            id: busrouteid
+        }
+    })
+      
+  res.redirect("/busroute")
   }
 
   // customer
@@ -183,8 +199,9 @@ exports.updatebusinfo = async(req, res)=>{
   const updatedata = req.params.id
   const data= await businfos.findByPk(updatedata)
     
-  
-  res.render("../views/backend/editbusform", { updateddata: data}) 
+ 
+
+ res.render("../views/backend/editbusform", { updateddata: data}) 
       
 } 
 
@@ -193,7 +210,7 @@ exports.updatebusinfo = async(req, res)=>{
   const updatedata = req.params.id
   console.log(updatedata)
   const { busname, contactno, busnumber  } = req.body
-
+console.log(contactno)
   await businfos.update({
       busname: busname,
       contact: contactno,
@@ -222,4 +239,4 @@ exports.deletebusroute = async (req, res)=>{
         res.redirect("/busroute")
      }
      // edit the data from the bus routes
-     
+    

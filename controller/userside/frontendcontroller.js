@@ -90,7 +90,7 @@ exports.userlogin = (req,res)=>{
         expiresIn: "1d"
       })
       res.cookie('token', token)
-      res.redirect("/")
+     res.redirect("/")
 
      }else{
       res.send("email or password is invalid ")
@@ -148,4 +148,8 @@ exports.userlogin = (req,res)=>{
 }
 }
   
-  
+  // saerch the ticket 
+  exports.searchticket = (req, res)=>{
+
+    res.render("../views/frontend/ticketsearch")
+  }

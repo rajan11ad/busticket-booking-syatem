@@ -8,7 +8,7 @@
   --text-light: #767268;
   --extra-light: #f5f6f8;
   --white: #ffffff;
-  --max-width: 12000px;
+  
 }
 
 * {
@@ -362,6 +362,7 @@ nav {
   gap: 2rem;
   flex-direction: column;
   text-align: center;
+  height: 100px;
 }
 
 .offer__header a {
@@ -375,8 +376,11 @@ nav {
 
 .offer__grid {
   margin-top: 4rem;
-  display: grid;
+  display: flex;
   gap: 1rem;
+  width: 1000px;
+  margin-left: 90px;
+  height: 550px;
 }
 
 
@@ -385,6 +389,11 @@ nav {
   border-radius: 2px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
+  gap: 2rem;
+
+height: 350px;
+margin-left: 20px;
+  
 }
 
 .offer__card:hover {
@@ -394,6 +403,10 @@ nav {
 .offer__card img {
   margin-bottom: 1rem;
   border-radius: 2px;
+  height: 200px;
+  width: 270px;
+ 
+  
 }
 
 .offer__card h4 {
@@ -404,8 +417,9 @@ nav {
 }
 
 .offer__card p {
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   color: var(--text-light);
+  gap: 1rem;
 }
 
 .offer__card > div {
@@ -477,7 +491,7 @@ nav {
 }
 
 .swiper-slide {
-  max-width: 400px;
+  max-width: 300px;
 }
 
 .client__card {
@@ -486,6 +500,7 @@ nav {
   text-align: center;
   background-color: var(--white);
   border-radius: 2px;
+  justify-content: space-between;
 }
 
 .client__card img {
