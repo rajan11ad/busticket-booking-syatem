@@ -5,7 +5,7 @@ require('dotenv').config()
 const froroutes = require('./routes/frontendroute')
 const backendrout = require('./routes/backendroute')
 const cookieparser =require("cookie-parser")
-const jwt = require("jsonwebtoken")
+
 
 
 require("./model/index")
@@ -30,18 +30,12 @@ app.post('/adminlogin', (req, res) => {
 
   
   if (username == ADMIN_USERNAME && password == ADMIN_PASSWORD) {
-    try {
-      var token = jwt.sign({ id: username }, process.env.JWT_SECRET, {
-        expiresIn: '1h' // Set an expiration time
-      });
-      res.cookie('token', token, { httpOnly: true, secure: true }); // Set secure cookies
-      res.render("../views/backend/firstpage");
-    } catch (error) {
-      console.error("Error generating token:", error);
-      res.status(500).send('Internal server error');
-    }
+  
+   
+      res.render("../views/backend/firstpage")
+    
   } else {
-    res.status(401).send('Invalid data');
+    res.status(401).send('Invalid data')
   }
 })
 

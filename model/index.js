@@ -41,8 +41,8 @@ db.userlogins= require("./userlogin.js")(sequelize, DataTypes);
 
 
 
-db.sequelize.sync({ force: false}).then(() => {
-  console.log("yes re-sync done");
-});
+db.sequelize.sync({ force:false}).then(() => {
+  console.log("yes re-sync done")
+})
 
 module.exports = db;
