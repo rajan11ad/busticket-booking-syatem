@@ -1,105 +1,98 @@
+
 <%- include('../common/head.ejs')-%>
-      
-
-<title>Admin Dashboard</title>
-</head>
 <%- include('../common/header.ejs')-%>
-<body>
-
-
-
-
-
-<div class="container-fluid bg-side-nav">
-   <div class="row">
-      <div class="col-lg-2 sidebaare">
-         
-
-          <%- include('../common/sidebar.ejs')-%>
-
-      </div>
-      <div class="col-lg-10">
-
-        <div class="dashboard-content-area">
-          
-            <div class="dashboard-content-area">
-                <!-- put your contente -->
-
-              
-
-
-
-    </div>
-
-    <h1>Customer Status</h1>
-        
- <a class="btn btn-success btn-md" href="/addcustomerdata/">Add Customer</a> 
- <br>
-               <table class="table table-bordered" id="datatable" width="100%" cellspacing="0">
-                  <thead>
-                     <tr>
-                        <th>Id</th>
-                        <th>Buse Number</th>
-                        <th> destination </th>
-                        <th>price</th>
-                        <th> source</th>
-                       <th>Action</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td>raj k</td>
-                        <td>devs</td>
-                        <td> ejene</td>
-                        <td> ejene</td>
-                        <td> ejene</td>
-                        
-                        
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <%- include('../common/sidebar.ejs')-%>
+      <!-- partial -->
+      
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Bus Booking Status</h4>
+                  <p class="card-description">
+                    <a href="/addcustomerdata/" type="button" class="btn btn-success">Add Booking </a>
+                   
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Name
+                          </th>
+                          <th>
+                           Email
+                          </th>
+                          <th>
+                            Mobile_No 
+                          </th>
+                          <th>
+                            Boarding_point
+                          </th>
+                          <th>
+                            Seat 
+                          </th>
+                          <th>
+                            Amount
+                          </th>
+                          <th>
+                            Route 
+                          </th>
+                          <th>
+                            Depature_date 
+                          </th>
+                          <th>
+                            Travels
+                          </th>
+                          <th>
+                            Payment Status
+                          </th>
+                          <th>
+                          Bus Number
+                          </th>
+                          <th>
+                        Time
+                         </th>
+                         <th>
+                          Action
+                         </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% customerdata.forEach((customer)=>{ %>
+                           <tr>
+                              <td><%- customer.name %></td>
+                              <td><%- customer.email %></td>
+                             <td> <%- customer.mobile_No %></td>
+                             <td> <%- customer.boarding_point %></td>
+                             <td> <%- customer.seat %></td>
+                             <td> <%- customer.Amount %></td>
+                             <td> <%- customer.route %></td>
+                             <td> <%- customer.depature_date %></td>
+                             <td> <%- customer.bus_name %></td>
+                             <td> <%- customer.paymentstatus %></td>
+                             <td> <%- customer.busnumber %></td>
+                             <td> <%- customer.time %></td>
+                              <td>
+                                 <a class="btn btn-primary" href="/editcustomerdata/<%-customer.id %>">Edit</a>                     
+                                 <a class="btn btn-danger ml-2" href="/deletecustomerdata/<%-customer.id %>">Delete</a>   
+                                
+                             
+                              </td>
+                           </tr>
+                           <%  }) %>
                        
                        
-                       
-                        <td>
-                           <a class="btn btn-primary" href="/editcustomerdata">Edit</a>                     
-                           <form style="display: inline;" action="/delete/raj k?_method=DELETE" method="POST">
-                              <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
-                           </form>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td>hhh</td>
-                        <td> rajan</td>
-                        <td> ejene</td>
-                        <td> ejene</td>
-                        <td> ejene</td>
-                        
-                       
-                       
-                       
-                        <td>
-                           <a class="btn btn-primary" href="/editcustomerdata">Edit</a>                     
-                           <form style="display: inline;" action="/delete/hhh?_method=DELETE" method="POST">
-                              <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
-                           </form>
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>
-                 
-
-         
-       
-
-              <!-- end your content here -->
-             </div>
-
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
-         </div>
-      </div>
+            
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <%- include('../common/footer.ejs')-%>
 
-        <!-- end your content here -->
-       </div>
 
-      </div>
-   </div>
-</div>
-<%- include('../common/footer.ejs')-%>

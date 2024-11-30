@@ -1,42 +1,76 @@
-
-
-<aside>
-    <nav class="sidebar py-2 mb-4">
-       <ul class="nav flex-column" id="nav_accordion">                      
-          <li class="nav-item">
-             <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item1" href="#"> Buses <i class="bi small bi-caret-down-fill"></i> </a>
-             <ul id="menu_item1" class="submenu collapse" data-bs-parent="#nav_accordion">
-                <li><a class="nav-link" href="/addbus">Add Bus </a></li>
-                <li><a class="nav-link" href="/busroute/">Add Bus Route </a></li>
-                     
-             </ul>
-          </li>
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+   <ul class="nav">
+    
+   
+     <li class="nav-item">
+       <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+         <i class="menu-icon mdi mdi-floor-plan"></i>
+         <span class="menu-title">Buses</span>
+         <i class="menu-arrow"></i> 
+       </a>
+       <div class="collapse" id="ui-basic">
+         <ul class="nav flex-column sub-menu">
+           <li class="nav-item"> <a class="nav-link" href="/addbus">Add Bus</a></li>
+           <li class="nav-item"> <a class="nav-link" href="/busroute">Add Bus Route</a></li>
           
-          <li class="nav-item">
-             <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item2" href="#"> Category <i class="bi small bi-caret-down-fill"></i> </a>
-             <ul id="menu_item2" class="submenu collapse" data-bs-parent="#nav_accordion">
-                <li><a class="nav-link" href="/customer">Customer </a></li>
-                <li><a class="nav-link" href="/booking">Booking </a></li>               
-             </ul>
-          </li>
-          <li class="nav-item">
-             <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item3" href="#"> driver <i class="bi small bi-caret-down-fill"></i> </a>
-             <ul id="menu_item3" class="submenu collapse" data-bs-parent="#nav_accordion">
-                <li><a class="nav-link" href="/admin/driver/">All driver</a></li>
-                <li><a class="nav-link" href="/admin/repord card/">report card </a></li>              
-             </ul>
-          </li> 
-          
-          
-
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item4" href="#"> seat <i class="bi small bi-caret-down-fill"></i> </a>
-            <ul id="menu_item4" class="submenu collapse" data-bs-parent="#nav_accordion">
-               <li><a class="nav-link" href="/admin/seat/">seat</a></li>
-               <li><a class="nav-link" href="/admin/reports/">reports </a></li>              
-            </ul>
-         </li>   
-       </ul>
+         </ul>
+       </div>
+     </li>
+    
+     <li class="nav-item">
+       <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+         <i class="menu-icon mdi mdi-card-text-outline"></i>
+         <span class="menu-title">Booking</span>
+         <i class="menu-arrow"></i>
+       </a>
+       <div class="collapse" id="form-elements">
+         <ul class="nav flex-column sub-menu">
+           <li class="nav-item"><a class="nav-link" href="/customer">Paid Booking</a></li>
+           <li class="nav-item"><a class="nav-link" href="/unpaidbooking">Unpaid Booking</a></li>
+         </ul>
+       </div>
+     </li>
+    
+      
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+         <i class="menu-icon mdi mdi-table"></i>
+         <span class="menu-title">Ticket</span>
+         <i class="menu-arrow"></i>
+       </a>
+       <div class="collapse" id="tables">
+         <ul class="nav flex-column sub-menu">
+           <li class="nav-item"> <a class="nav-link" href="/ticket">print the ticket</a></li>
+         </ul>
+       </div>
        
-    </nav>
- </aside>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+         <i class="menu-icon mdi mdi-layers-outline"></i>
+         <span class="menu-title">FeedBack</span>
+         <i class="menu-arrow"></i>
+       </a>
+       <div class="collapse" id="icons">
+         <ul class="nav flex-column sub-menu">
+           <li class="nav-item"> <a class="nav-link" href="/managefeedback">View Feedback</a></li>
+         </ul>
+       </div>
+     </li>
+     <li class="nav-item nav-category">pages</li>
+     <li class="nav-item">
+       <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+         <i class="menu-icon mdi mdi-account-circle-outline"></i>
+         <span class="menu-title">Admin Pages</span>
+         <i class="menu-arrow"></i>
+       </a>
+       <div class="collapse" id="auth">
+         <ul class="nav flex-column sub-menu">
+           <li class="nav-item"> <a class="nav-link" href="/adminregister"> Register </a></li>
+         </ul>
+       </div>
+     </li>
+    
+   </ul>
+ </nav>

@@ -36,9 +36,14 @@ db.sequelize = sequelize;
 db.busroutes= require("./busroute.js")(sequelize, DataTypes);
 db.businfos= require("./businfo.js")(sequelize, DataTypes);
 db.userlogins= require("./userlogin.js")(sequelize, DataTypes);
+db.customers= require("./booking.js")(sequelize, DataTypes);
+db.feedbacks= require("./feedback.js")(sequelize, DataTypes);
+db.adminlogins= require("./adminlogin.js")(sequelize, DataTypes);
 
 
-
+// relationship 
+db.businfos.hasMany(db.busroutes)
+db.busroutes.belongsTo(db.businfos)
 
 
 db.sequelize.sync({ force:false}).then(() => {

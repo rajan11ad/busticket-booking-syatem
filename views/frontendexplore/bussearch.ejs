@@ -1,0 +1,35 @@
+<section class="section__container booking__container">
+ 
+    <form action="/search" class="booking__form" method="post">
+      
+      
+        <span><i class="ri-location-2-fill"></i></span>
+        
+        <div>
+          <h10 style="text-align: center; color: rgb(220, 20, 20); margin-top: -100px;">
+            <%- error %></h10>
+          <label for="check-in">Source</label>
+          <input type="text" name="source" placeholder="Enter Source Address" />
+        </div>
+      </div>
+     
+      
+        <div>
+          <h10 style="text-align: center; color: rgb(220, 20, 20); margin-top: -100px;">
+            <%- error %></h10>
+          <label for="check-out">Destination</label>
+          <input type="text" name="destination" placeholder=" Enter Destination Address" />
+        </div>
+      </div>
+      <div class="input__group">
+        <span><i class="ri-calender-fill"></i></span>
+        <div>
+          <label for="guest">Date</label>
+          <input type="date" name="date" min="<%-minDate %>" placeholder="Date" />
+        </div>
+      </div>
+      <div class="input__group input__btn">
+        <button class="btn">Search</button>
+      </div>
+    </form>
+  </section>

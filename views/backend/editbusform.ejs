@@ -1,53 +1,43 @@
+
+
 <%- include('../common/head.ejs')-%>
+<%- include('../common/header.ejs')-%>
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <%- include('../common/sidebar.ejs')-%>
+      <!-- partial -->
 
-      <title> Admin Dashboard</title>
-   </head>
-   <body>
-      
-    <%- include('../common/header.ejs')-%>
-
-      <div class="container-fluid bg-side-nav">
-         <div class="row">
-            <div class="col-lg-2 sidebaare">
+<div class="main-panel">        
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Add New Bus </h4>
+            <p class="card-description">
+             
+            </p>
+            <form class="forms-sample" method="post" action="/editbusinfo/<%-updateddata.id %>">
+              <div class="form-group">
+                <label for="exampleInputUsername1">Bus Name</label>
+                <input type="text" class="form-control"name ="busname" id="exampleInputUsername1"value="<%-updateddata.busname %>" placeholder="Bus_Name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Contact_No</label>
+                <input type="text" class="form-control" name ="contact" id="exampleInputEmail1" value="<%-updateddata.contact %>" placeholder="Contact_No">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Bus_Number</label>
+                <input type="text" class="form-control" name ="busnumber" id="exampleInputPassword1"value="<%-updateddata.busnumber %>" placeholder="Bus_Number">
+              </div>
+             
               
-
-                <%- include('../common/sidebar.ejs')-%>
-            </div>
-            <div class="col-lg-10">
-
-              <div class="dashboard-content-area">
-                <!-- put your contente -->
-
-               <h1 class="mb-2 mt-2">Update the info</h1>
-    
-    <form method="post" action="/editbusinfo/<%-updateddata.id %>">
-
-      <div class="mb-3 mt-3 row g-9 align-items-center">  
-        <div class="col col-lg-2"><label class="form-label">Bus Name </label></div>
-        <div class="col"><input type="text" name ="busname" class="form-control" value="<%-updateddata.busname %>"></div>
-      </div>
-
-      <div class="mb-3 mt-3 row g-9 align-items-center">           
-          <div class="col col-lg-2"><label class="form-label">Contact No</label></div>
-          <div class="col"><input type="text" name ="contactno" class="form-control"value="<%-updateddata.contact %>"></div>
-      </div>
-
-      <div class=" mb-3 mt-3 row g-9 align-items-center ">
-        <div class="col col-lg-2"><label class="form-label">Bus Number</label></div>
-        <div class="col"><input type="text" name ="busnumber" class="form-control" value="<%-updateddata.busnumber %>"></div>
+              <button type="submit" class="btn btn-primary me-2">Update</button>
+             
+            </form>
+            <button class="btn btn-light">Cancel</button>
+          </div>
+        </div>
       </div>
       
-  
-      
-      
-     
-
-      <div class="mb-5 mt-3 align-items-center text-center"> 
-           <button type="submit" class="btn btn-primary">Update</button>
-      </div>
-  </form>
-
-              <!-- end your content here -->
-              <%- include('../common/footer.ejs')-%>
-   </body>
-</html>
+<%- include('../common/footer.ejs')-%>

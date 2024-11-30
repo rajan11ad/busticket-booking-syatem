@@ -6,7 +6,7 @@ module.exports={
     DB:"busticketproject",
     Dialect:"mysql",
     pool :{
-        max : 5,
+        max : 10,
         min : 0,
         acquire: 300000,
         idle: 10000,

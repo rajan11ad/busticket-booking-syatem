@@ -1,411 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <title> Haraiya Bus Service</title>
-  </head>
-  <body>
+
+<%- include('../frontendexplore/navbar.ejs')-%>
+
+<%- include('../frontendexplore/bussearch.ejs')-%>
     
-    <header class="header">
-      <nav>
-        <div class="nav__bar">
-          <!-----logo--
-          <div class="logo">
-            <a href="#"><img src="assets/img1.png" alt="logo" /></a>
-          </div>
-        -->
-          
-          <div class="hbs">
-            <label class="hbs">HBS</label>
-          </div>
-          
-          <div class="nav__menu__btn" id="menu-btn">
-            <i class="ri-menu-line"></i>
-          </div>
-        </div>
-        <ul class="nav__links" id="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#service">Service</a></li>
-          <li><a href="#Our Bus Features">Our Bus Features</a></li>
-          <li> <a href="/ticketsearch">Views Ticket</a></li>
-          <li> <a href="#about"> About Us</a></li>
-        <div class="header-btn">
-            <a href="/login" class="sign-in">sign In</a>
-    </ul>
-   
 
-
-        </div>
-      </nav>
-      <div class="section__container " id="home">
-        <h1>Get Your Ticket <span>
-           Online Easy & Safley</span></h1>
-        
-        </div>
-        <div class="header__container">
-        <div class="booking">
-          <form action="/search" class="booking__form" method="post">
-            <div class="booking__input">
-              <label for="arrival">Source</label>
-              <input type="text" name="source" placeholder="Enter your source" />
-            </div>
-            <div class="booking__input">
-              <label for="departure">Destination</label>
-              <input type="text" name="destination" placeholder="Enter your Destination" />
-            </div>
-            <div class="booking__input">
-              <label for="date">Date</label>
-              <input type="date" name="date" placeholder="Date"  min="<%-minDate %>" />
-            </div>
-        
-          <div class="booking__btn">
-            <button class="btn">Search </button>
-            </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    </header>
-
-    <section class="section__container service__container" id="service">
-      <h2 class="section__header">Get Your Tickets Just 3 Steps</h2>
-      <p class="section__des">
-       this was the easy ways to book your ticket 
-      
-      <div class="service__grid">
-        <div class="service__card">
-          <img src="image/2023502.png" alt="service" />
-          <div>
-            <div>
-              <h4>Search The Bus </h4>
-              <p>
-                Immerse yourself in the allure of the open sea as you set sail
-                on a meticulously crafted cruise experience.
-              </p>
-            </div>
-           
-          </div>
-        </div>
-        <div class="service__card">
-          <img src="./image/seat.jpeg" alt="service" />
-          <div>
-            <div>
-              <h4>Choose The Seat</h4>
-              <p>
-                Experience unparalleled convenience our Car Booking
-                service, designed to elevate your travel journey.
-              </p>
-            </div>
-            
-          </div>
-        </div>
-        <div class="service__card">
-          <img src="/image/billpay.png" alt="service" />
-          <div>
-            <div>
-              <h4>Pay Bill</h4>
-              <p>
-                Secure your wings to the world our Air Ticket service, your
-                gateway to seamless travel.
-              </p>
-            </div>
-            
-          </div>
-        </div>
-        
-    </section>
-    <!-------------------------our bus features--------------------------------------------------------------------------->
-
-    <section class="section__container offer__container" id="offer">
-      <div class="service__header">
-        <h2 class="section__header">Our Bus Features</h2>
-        
-      </div>
-      <div class="offer__grid">
-        <div class="offer__card">
-          <img src="image/download (1).jpeg" alt="our bus features" />
-          <h4>Rudrapur To Baglung</h4>
-          <p>A/c and Fan System</p>
-          <p> Music System</p>
-          <p>LED TV</p>
-          <p> Mobile Charger</p>
-         
-          <div>
-           
-           
-          </div>
-        </div>
-        <div class="offer__card">
-          <img src="image/globalAC.jpg" alt="our bus features" />
-          <h4>Rudrapur To Kathmandu</h4>
-          <p>semi Sleeper</p>
-          <p>A/c</p>
-          <p>Music System</p>
-          <p>Mineral Water</p>
-          <div>
-           
-       
-          </div>
-        </div>
-        <div class="offer__card">
-          <img src="image/3132-outside.jpg" alt="our bus features" />
-          <h4>Rudrapur To Pokhara</h4>
-          <p>Heater</p>
-          <p>Transparent Roof</p>
-          <p>Luxurious Sofa Seat</p>
-          <p>Air Suspension</p>
-          </div> 
-          </div>
-        </div>
-      </div>
-    </section>
-<!----------------------------------------------------about us -------------------------------------------->
     <section class="section__container about__container" id="about">
       <div class="about__image">
-        <img src="/image/bus.jpg" alt="about" />
+        <img src="assets/bus1.jpg" alt="about" />
       </div>
       <div class="about__content">
-        <h2 class="section__header">About Us</h2>
+        <p class="section__subheader">ABOUT US</p>
+        <h2 class="section__header">The Best way to book Bus Ticket Here!</h2>
         <p class="section__description">
-            At Haraiya Bus Service, we are passionate about simplifying your travel experience. 
-            We understand that planning a journey can be stressful, and that's
-             why we've designed a user-friendly platform to make bus ticket booking a breeze.
+          Haraiya Bus Service is a premier transportation company specializing in offering comfortable and reliable bus travel options across key destinations. Known for its commitment to customer satisfaction, Haraiya Bus Service provides a wide range of travel solutions tailored to meet the needs of all types of travelers, from daily commuters to long-distance explorers. With a fleet of modern buses equipped with the latest amenities, including comfortable seating, air conditioning, Wi-Fi connectivity, and on-board entertainment options, passengers are guaranteed a pleasant and enjoyable journey. The company prides itself on its punctual departures, comprehensive route coverage, and competitive pricing, making it a preferred choice for those seeking a stress-free travel experience. Haraiya Bus Service is dedicated to ensuring safety, convenience, and affordability, with a user-friendly booking system and responsive customer support, enhancing the overall travel experience for its valued passengers.
         </p>
-        <ul>
-          <li>
-            <span><i class="ri-checkbox-circle-line"></i></span>
-            Thank you for choosing Haraiya Bus Service. Happy travels!
-          </li>
-          <li>
-            <span><i class="ri-checkbox-circle-line"></i></span>
-            Enjoy a straightforward and quick booking experience for flights,
-            trains, and other transportation modes, all in one place.
-          </li>
-        </ul>
-        
+        <div class="about__btn">
          
         </div>
       </div>
     </section>
 
-    <section class="client" id="client">
-      <div class="section__container client__container">
-        <h2 class="section__header">We promise To Deliver</h2>
+    <section class="section__container room__container">
+      <p class="section__subheader">Way to book bus</p>
+      <h2 class="section__header">Get Your Tickets Just 3 Steps.</h2>
+      <div class="room__grid">
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/search.png" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Search The Bus</h4>
+            <p>
+              search functionality of Haraiya Bus Service will promptly display a list of available bus options that match your criteria
+            </p>
+            </p>
+            
+          
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/seat.jpeg" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Choose The Seat</h4>
+            <p>
+              You can select your preferred seat based on your comfort and convenience preferences,
+            </p>
+            
+        
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/paybill.png" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+             <!--- <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span> ---->
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Pay Bill</h4>
+            <p>
+              After selecting your seat, proceed to the payment section to finalize your booking. 
+            </p>
+            
        
-        <!-------------------------------------client reviews----------------------------------------->
-        <!-- Slider main container -->
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <div class="client__card">
-                <img src="/image/safety.png" alt="client" />
-                <h4>SAFETY</h4>
-               
-                <div class="client__ratings">
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-half-fill"></i></span>
-                  <span><i class="ri-star-line"></i></span>
-                </div>
-                <p>
-                  With saftey+ we have brought in a sat of measure like sanitized buses.mandatory masks etc.to ensure you travel saftey
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="client__card">
-                <img src="/image/superior.jpg" alt="client" />
-                <h4>SUPERIOPR SERVICE</h4>
-                <div class="client__ratings">
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-line"></i></span>
-                </div>
-                <p>
-                  We put our experince and relationship to good use and are available to solve your travel issue
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="client__card">
-                <img src="/image/price.png" alt="client" />
-                <h4>Lowest Prices</h4>
-                
-                <div class="client__ratings">
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-line"></i></span>
-                  <span><i class="ri-star-line"></i></span>
-                </div>
-                <p>
-                  we alawys try to five you the lowest price with the better experiences increase the service provider's competitivenes
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="client__card">
-                <img src="/image/benefit.jpg" alt="client" />
-                <h4>Unmatched Benefits</h4>
-                <p></p>
-                <div class="client__ratings">
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-half-fill"></i></span>
-                  <span><i class="ri-star-line"></i></span>
-                </div>
-                <p>
-                  These benefits enhance the customer experience, streamline operations, and potentially.Payment Flexibility.
-                  
-                  
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="client__card">
-                <img src="assets/client-5.jpg" alt="client" />
-                <h4>David Carter</h4>
-                <p>Adventure Enthusiast</p>
-                <div class="client__ratings">
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                </div>
-                <p>
-                  The travel resources and tips section on this platform is a
-                  goldmine for anyone looking to make the most of their travels.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
-    <!----------------------------------------Contact us -------------------------------------------->
-    <header>
-      <h1>Contact Us</h1>
-    </header>
-  
-    <section class="contact-form">
-      <form action="contact.php" method="post">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
-  
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required>
-  
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-  
-        <button type="submit">Send Message</button>
-      </form>
+
+    <section class="service" id="service">
+      <div class="section__container service__container">
+        <div class="service__content">
+          <p class="section__subheader">SERVICES</p>
+          <h2 class="section__header">Strive Only For The Best.</h2>
+          <ul class="service__list">
+            <li>
+              <span><i class="ri-shield-star-line"></i></span>
+              Saftey & Security
+            </li>
+            <li>
+              <span><i class="ri-24-hours-line"></i></span>
+              24 Hours  Service
+            </li>
+            <li>
+              <span><i class="ri-headphone-line"></i></span>
+              Seamless Travel
+            </li>
+            <li>
+              <span><i class="ri-map-2-line"></i></span>
+              Customer Support
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
-      
- <!--------------------------------Footer section---------------------------------------------------------------------->
 
-</div>
-    <footer class="footer">
-      <div class="section__container footer__container">
-        <div class="footer__col">
-          <div class="logo">
-            <a href="#"><img src="assets/logo.png" alt="logo" /></a>
-          </div>
-          <p>
-            Explore the world ease and excitement through our comprehensive
-            travel platform. Your journey begins here, where seamless planning
-            meets unforgettable experiences.
-          </p>
-          <ul class="footer__socials">
-            <li>
-              <a href="#"><i class="ri-facebook-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-instagram-line"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-youtube-line"></i></a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Quick Links</h4>
-          <ul class="footer__links">
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#our bus Features">our Bus Features</a>
-            </li>
-            <li>
-              <a href="#service">Service</a>
-            </li>
-            <li>
-              <a href="#About Us">About Us</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Contact Us</h4>
-          <ul class="footer__links">
-            <li>
-              <a href="#">
-                <span><i class="ri-phone-fill"></i></span> 9821923400
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span><i class="ri-record-mail-line"></i></span> Hbusservice@gmail.com
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span><i class="ri-map-pin-2-fill"></i></span> kanchan-3 Haraiya
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Follow us </h4>
-          <ul class="footer__socials">
-            <li>
-              <a href="#"><i class="ri-facebook-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-instagram-line"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-youtube-line"></i></a>
-            </li>
-        </div>
-      </div>
-      <div class="footer__bar">
+
   
-      </div>
-    </footer>
+    <section class="explore" id="explore">
+      <section class="contact-section">
+          <div class="container">
+              <h2>Get In Touch</h2>
+              <form id="form" action="/feedback" method="post">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" placeholder="Your name">
+  
+                  <label for="email">Email:</label>
+                  <input type="text" id="email" name="email" placeholder="Your email" >
+  
+                  <label for="message">Message:</label>
+                  <textarea id="message" name="message" placeholder="Your message" ></textarea>
+  
+                  <button type="submit">Send Message</button>
+              </form>
+          </div>
+      </section>
+  </section>
+  <script>
+      document.getElementById('form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the form from submitting immediately
+  
+          // Simple client-side validation
+          var isValid = true;
+          var name = document.getElementById('name').value.trim();
+          var email = document.getElementById('email').value.trim();
+          var message = document.getElementById('message').value.trim();
+  
+          if (!name || !email || !message) {
+              alert('Please fill in all fields.');
+              isValid = false;
+          } else if (!email.includes('@')) {
+              alert('Please enter a valid email address.');
+              isValid = false;
+          }
+  
+          if (isValid) {
+              alert('Feedback sent successfully!');
+              // Assuming server-side processing is successful, reset the form here
+              document.getElementById('form').reset();
+              // Optionally, you might redirect the user or do other actions
+          }
+      });
+  </script>
+  
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="main.js"></script>
-  </body>
 
-</html>
-    
+    <%- include('../frontendexplore/footer.ejs')-%>

@@ -1,0 +1,48 @@
+
+<%- include('../common/head.ejs')-%>
+<%- include('../common/header.ejs')-%>
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <%- include('../common/sidebar.ejs')-%>
+      <!-- partial -->
+
+<div class="main-panel">        
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Register New Admin Here !!</h4>
+            <p class="card-description">
+              <h10 style=" color: rgb(220, 20, 20); ">
+                <%- adminregerror %>
+              </h10>
+            </p>
+            <form class="forms-sample" method="post" action="/adminregister">
+              <div class="form-group">
+                <label for="exampleInputUsername1">UserName</label>
+                <input type="text" class="form-control"name ="uname" id="exampleInputUsername1" placeholder="User_Name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="text" class="form-control" name ="email" id="exampleInputEmail1" placeholder="email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name ="password" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Confirm Password</label>
+                <input type="password" class="form-control" name ="cpassword" id="exampleInputPassword1" placeholder="Confirm Password">
+              </div>
+             
+              
+              <button type="submit" class="btn btn-primary me-2">Register</button>
+             
+            </form>
+            
+          </div>
+        </div>
+      </div>
+      
+<%- include('../common/footer.ejs')-%>

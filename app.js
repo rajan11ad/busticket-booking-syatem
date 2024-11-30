@@ -5,7 +5,20 @@ require('dotenv').config()
 const froroutes = require('./routes/frontendroute')
 const backendrout = require('./routes/backendroute')
 const cookieparser =require("cookie-parser")
+const session = require("express-session")
+const flash = require("connect-flash")
 
+
+
+app.use(session({
+
+  secret:"hellothisissecret",
+  resave:false,
+  saveUninitialized:false,
+
+}))
+
+app.use(flash())
 
 
 require("./model/index")
@@ -19,25 +32,11 @@ app.use(express.urlencoded({ extended: true }))
 // to access the data from the sepcific folder(public)
 app.use(express.static(__dirname+'/public' ))
 app.use(express.static('/public/css'))
-app.use(express.static('/images'))
+app.use(express.static('/image'))
 app.use(cookieparser())
 
 
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME; // Use environment variables
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD
-app.post('/adminlogin', (req, res) => {
-  const { username, password } = req.body
 
-  
-  if (username == ADMIN_USERNAME && password == ADMIN_PASSWORD) {
-  
-   
-      res.render("../views/backend/firstpage")
-    
-  } else {
-    res.status(401).send('Invalid data')
-  }
-})
 
 
 
@@ -46,13 +45,22 @@ app.post('/adminlogin', (req, res) => {
 
 app.get('/admin/logout', (req, res) => {
 
-  res.clearCookie('token')
+  res.clearCookie('toke')
       res.redirect('/adminlogin');
   })
+  app.get('/user/logout', (req, res) => {
+
+    res.clearCookie('token')
+        res.redirect('/');
+    })
 
 
 
-
+    app.use((req,res,next)=>{
+      res.locals.islogin= req.cookies.token
+      next()
+    
+    })
 
 
 app.use("",backendrout)

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger and Travel Information</title>
+ 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .form-container, .details-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 10px;
+        }
+        .form-group, .details-group {
+            margin-bottom: 20px;
+        }
+        .form-group label, .details-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .details-group div {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group button {
+            background-color: #5f68dd;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #4f58cd;
+        }
+        .details-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .details-section {
+            width: 48%; /* Adjusts for spacing, ensuring two sections fit side by side */
+        }
+        .details-group div {
+            background-color: #f9f9f9;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+  
+
+ 
+<div class="form-container">
+    <h2>Passenger Information Form</h2>
+    <form id="passengerInfoForm" method="post">
+        <div class="form-group">
+            <label for="passengerName">Name of Passenger</label>
+            <input type="text" id="passengerName" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="emailAddress">Email Address</label>
+            <input type="email" id="emailAddress" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="tel" id="mobileNumber" name="mobile_no" required>
+        </div>
+        <div class="form-group">
+            <label for="boardingPoint">Boarding Point</label>
+            <select id="boardingPoint" name="boarding_Point" required>
+                <option value="">Select Boarding Point</option>
+                <option value="butwal bus park">Butwal Bus Park</option>
+                <option value="haraiya bus park">Haraiya Bus Park</option>
+
+                <input type="hidden" id="userId" name="seat" value="<%-seatnumber %>">
+                <input type="hidden" id="userId" name="amount" value="<%-total %>">
+                <input type="hidden" id="userId" name="route" value="<%-route %>- <%-to %>">
+                <input type="hidden" id="userId" name="date" value="<%-date %>">
+                <input type="hidden" id="userId" name="travel" value="<%-travel %>">
+                <input type="hidden" id="userId" name="time" value="<%-time %>">
+                <input type="hidden" id="userId" name="busid" value="<%-busid %>">
+
+                <input type="hidden" id="userId" name="busnumber" value="<%-busnumber %>">
+                <!-- Add more boarding points as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+
+        <!-- Passenger Information Form Fields Here -->
+    </form>
+</div>
+
+<div class="details-container">
+    <div class="details-section">
+        <h2>Travel Details</h2>
+        <div class="details-group">
+            <label>Route:</label>
+            <div><%-route  %> - <%-to %></div>
+        </div>
+     
+        <div class="details-group">
+            <label>Date:</label>
+            <%-date %>
+            <div></div>
+        </div>
+        <div class="details-group">
+            <label>Seats:</label>
+            <div><%-seatnumber %></div>
+        </div>
+        <div class="details-group">
+            <label>Travel:</label>
+            <div><%-travel %></div>
+        </div>
+        <div class="details-group">
+            <label>time:</label>
+            <div><%-time %></div>
+           
+        </div>
+    </div>
+    <div class="details-section">
+        <h2>Payment Details</h2>
+        <div class="details-group">
+            <label>Per Ticket:</label>
+            <div><%-perticket%></div>
+        </div>
+        <div class="details-group">
+            <label>Total Cost:</label>
+            <div><%-total %></div>
+        </div>
+       
+        
+    </div>
+</div>
+
+
+<script>
+// JavaScript for handling form submission goes here
+</script>
+
+</body>
+</html>

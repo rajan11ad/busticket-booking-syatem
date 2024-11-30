@@ -1,60 +1,86 @@
+
+
 <%- include('../common/head.ejs')-%>
+<%- include('../common/header.ejs')-%>
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <%- include('../common/sidebar.ejs')-%>
+      <!-- partial -->
 
-      <title> Admin Dashboard</title>
-   </head>
-   <body>
-      
-    <%- include('../common/header.ejs')-%>
+<div class="main-panel">        
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Update The Booking Info </h4>
+            <p class="card-description">
+             
+            </p>
+            <form class="forms-sample" method="post" action="/editcustomerdata/<%-booking.id %>">
+              <div class="form-group">
+                <label for="exampleInputUsername1">Name</label>
+                <input type="text" class="form-control"name ="name" id="exampleInputUsername1"value="<%-booking.name %>" placeholder="Enter your name ">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="text" class="form-control" name ="email" id="exampleInputEmail1" value="<%-booking.email %>" placeholder="Enter the email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Mobile_No</label>
+                <input type="text" class="form-control" name ="mobile_No" id="exampleInputPassword1"value="<%-booking.mobile_No %>" placeholder="Mobile_number">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Boarding_point</label>
+                <input type="text" class="form-control" name ="boardingpoint" id="exampleInputPassword1"value="<%-booking.boarding_point %>" placeholder="Boarding_point">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Seat</label>
+                <input type="text" class="form-control" name ="seat" id="exampleInputPassword1"value="<%-booking.seat %>" placeholder="Seat_number">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Amount</label>
+                <input type="text" class="form-control" name ="amount" id="exampleInputPassword1"value="<%-booking.Amount %>" placeholder="Amount">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Route</label>
+                <input type="text" class="form-control" name ="route" id="exampleInputPassword1"value="<%-booking.route %>" placeholder="Bus_route">
 
-      <div class="container-fluid bg-side-nav">
-         <div class="row">
-            <div class="col-lg-2 sidebaare">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Depature_date</label>
+                <input type="text" class="form-control" name ="date" id="exampleInputPassword1"value="<%-booking.depature_date %>" placeholder="Depature_date">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Travels</label>
+                <input type="text" class="form-control" name ="busname" id="exampleInputPassword1"value="<%-booking.bus_name %>" placeholder="travels">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">paymentstatus</label>
+                <input type="text" class="form-control" name ="paymentstatus" id="exampleInputPassword1"value="<%-booking.paymentstatus %>" placeholder="paymentstatus">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Bus_Number</label>
+                <input type="text" class="form-control" name ="busnumber" id="exampleInputPassword1"value="<%-booking.busnumber %>" placeholder="busnumber">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Time</label>
+                <input type="text" class="form-control" name ="time" id="exampleInputPassword1"value="<%-booking.time %>" placeholder="Time">
+              </div>
+             
+             
+             
+             
+             
+             
+             
               
-
-                <%- include('../common/sidebar.ejs')-%>
-            </div>
-            <div class="col-lg-10">
-
-              <div class="dashboard-content-area">
-                <!-- put your contente -->
-
-               <h1 class="mb-2 mt-2">Add Page</h1>
-    
-    <form method="post" action="/addbusroute">
-
-      <div class="mb-3 mt-3 row g-9 align-items-center">  
-        <div class="col col-lg-2"><label class="form-label">Source </label></div>
-        <div class="col"><input type="text" name ="source" class="form-control" placeholder="enter the source address"></div>
-      </div>
-
-      <div class="mb-3 mt-3 row g-9 align-items-center">           
-          <div class="col col-lg-2"><label class="form-label">Destination</label></div>
-          <div class="col"><input type="text" name ="destination" class="form-control" placeholder="enter the destination address"></div>
-      </div>
-
-      <div class="mb-3 mt-3 row g-9 align-items-center">
-        <div class="col col-lg-2"><label class="form-label">Bus name</label></div>
-        <div class="col"><input type="text" name ="bus_name" class="form-control" placeholder="enter the bus Name"></div>
+              <button type="submit" class="btn btn-primary me-2">Update</button>
+             
+            </form>
+            <button class="btn btn-light">Cancel</button>
+          </div>
+        </div>
       </div>
       
-      <div class="mb-3 mt-3 row g-9 align-items-center">
-        <div class="col col-lg-2"><label class="form-label">Depature Date</label></div>
-        <div class="col"><input type="date" name ="depature_date" class="form-control" placeholder=""></div>
-      </div>
-      
-      <div class="mb-3 mt-3 row g-9 align-items-center"> 
-        <div class="col col-lg-2"><label class="form-label">Cost</label></div>
-        <div class="col"><input type="text" name="cost" class="form-control"  placeholder="enter the Cost"></div>
-      </div>
-      
-     
-
-      <div class="mb-5 mt-3 align-items-center text-center"> 
-           <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-  </form>
-
-              <!-- end your content here -->
-              <%- include('../common/footer.ejs')-%>
-   </body>
-</html>
+<%- include('../common/footer.ejs')-%>

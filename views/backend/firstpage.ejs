@@ -1,95 +1,59 @@
-<%- include('../common/head.ejs') -%>
-      
 
-      <title>Admin Dashboard</title>
-   </head>
-   <%- include('../common/header.ejs')-%>
-   <body>
- 
+<%- include('../common/head.ejs')-%>
+<%- include('../common/header.ejs')-%>
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <%- include('../common/sidebar.ejs')-%>
+      <!-- partial -->
+                <div class="col-md-4 grid-margin stretch-card">
+                  <div class="card" style="height: 150px; width: 50px;">
+                    <div class="card-body" >
+                      <h4 class="card-title">Bus Status</h4>
+                      <div class="media">
+                        <i class="mdi mdi-bus icon-md text-info d-flex align-self-start me-4"></i>
 
-   
-
-
-      <div class="container-fluid bg-side-nav">
-         <div class="row">
-            <div class="col-lg-2 sidebaare">
-               
-
-                <%- include('../common/sidebar.ejs')-%>
-
-            </div>
-            <div class="col-lg-10">
-
-              <div class="dashboard-content-area">
-                <!-- put your contente -->
-<h1>All Document</h1>
-               <div class="row">
-                  <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-info">
-                      <div class="inner">
-                        <h3>150</h3>
-        
-                        <p>Buses</p>
+                        <div class="media-body">
+                          <p class="card-text">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque.</p>
+                        </div>
+                       
                       </div>
-                      <div class="icon">
-                        <i class="ion ion-bag"></i>
+                      <a class="btn btn-info" href="/addbus"  style=" width: 120px;">See More</a>
+                    </div>
+                     
+                  </div>
+                </div>
+                <div class="col-md-4 grid-margin stretch-card">
+                  <div class="card" style="height: 150px; width: 50px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Booking Status</h4>
+                      <div class="media">
+                        <i class="mdi mdi-account-multiple icon-md text-info d-flex align-self-center me-3"></i>
+                        <div class="media-body">
+                          <p class="card-text">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque.</p>
+                        </div>
                       </div>
-                      <a href="/admin/bus-file" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                      <a class="btn btn-info" href="/customer" style=" width: 120px;">See More</a>  
+                    </div>
+                  
+                  </div>
+                </div>
+                <div class="col-md-4 grid-margin stretch-card">
+                  <div class="card" style="height: 150px;width: 150px; overflow: auto;">
+                    <div class="card-body">
+                      <h4 class="card-title">Feedback Status</h4>
+                      <div class="media">
+                        <i class="mdi mdi-account-card-details icon-md text-info d-flex align-self-end me-3"></i>
+                        <div class="media-body">
+                          <p class="card-text">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque.</p>
+                               
+                        </div>
+                        
+                      </div>
+                      <a class="btn btn-info" href="/managefeedback" style=" width: 120px;">See More</a>  
                     </div>
                   </div>
-                  <!-- ./col -->
-                  <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                      <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
-        
-                        <p>Buses</p>
-                      </div>
-                      <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
-                      </div>
-                      <a href="/admin/category/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                      <div class="inner">
-                        <h3>44</h3>
-        
-                        <p>Routes</p>
-                      </div>
-                      <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                      </div>
-                      <a href="/admin/products/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                  </div>
-                  <!-- ./col -->
-            
-                  <div class="col-lg-3 col-6">
-                    <div class="small-box bg-danger">
-                      <div class="inner">
-                        <h3>65</h3>
-        
-                       <p>Customer</p>
-                      </div>
-                      <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
-                      </div>
-                      <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                  </div>
-                </div> 
-              
-
-              <!-- end your content here -->
-             </div>
-
-            </div>
-         </div>
-      </div>
-      <%- include('../common/footer.ejs')-%>
+                </div>
+       
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <%- include('../common/footer.ejs')-%>

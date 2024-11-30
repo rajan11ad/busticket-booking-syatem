@@ -21,9 +21,17 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull : false,
     },
+    time: {
+      type: DataTypes.STRING,
+      
+    },
+    bus_number: {
+      type: DataTypes.STRING,
+     
+    },
       
       cost:{
-        type:DataTypes.INTEGER,
+        type:DataTypes.STRING,
         allowNull:false
         
         

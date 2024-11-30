@@ -1,95 +1,94 @@
+
 <%- include('../common/head.ejs')-%>
-      
-
-<title>Admin Dashboard</title>
-</head>
 <%- include('../common/header.ejs')-%>
-<body>
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <%- include('../common/sidebar.ejs')-%>
+      <!-- partial -->
+      
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Bus Status</h4>
+                  <p class="card-description">
+                    <a href="/addbusrouteform/" type="button" class="btn btn-success">Add New Bus Route </a>
+                   
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Source
+                          </th>
+                          <th>
+                           Destination
+                          </th>
+                          <th>
+                            Bus_Name
+                          </th>
+                          <th>
+                        Departure_Date
+                          </th>
+                          <th>
+                            Seat
+                              </th>
+                             
+                                  <th>
+                                    Cost
+                                      </th>
+                                      
+                                  <th>
+                                    time
+                                      </th>
+                                      
+                                  <th>
+                                    bus_number
+                                      </th>
 
-
-
-
-
-<div class="container-fluid bg-side-nav">
-   <div class="row">
-      <div class="col-lg-2 sidebaare">
-         
-
-          <%- include('../common/sidebar.ejs')-%>
-
-      </div>
-      <div class="col-lg-10">
-
-        <div class="dashboard-content-area">
-          
-            <div class="dashboard-content-area">
-                <!-- put your contente -->
-
-              
-
-
-
-    </div>
-
-    <h1>Route Status</h1>
-        
- <a class="btn btn-success btn-md" href="/addbusrouteform/">Add Bus Route</a> 
- <br>
-               <table class="table table-bordered" id="" width="100%" cellspacing="0">
-                  <thead>
-                     <tr>
-                        
-                        <th>Source</th>
-                        <th> destination </th>
-                        <th>Bus Name</th>
-                        <th> Departure</th>
-                       <th>Seat</th>
-                       <th>Cost</th>
-                       <th> Action</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tbody>
+                                      <th>
+                                        Action
+                                          </th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
                         <% busroutes.forEach((busroute) => { %>
-                            <tr>
-                                <td><%-busroute.source %></td>
-                                <td><%- busroute. destinatin %></td>
-                                <td><%- busroute.bus_name %></td>
-                                <td><%- busroute.depature_date %></td>
-                                <td><%- busroute.seat %></td>
-                                <td><%- busroute.cost %></td>
-
-
-                                <td>
-                                 <a class="btn btn-primary" href="/editbusroutedata/<%-busroute.id%>">Edit</a>  
-                     
-                                 <form style="display: inline;" action="/deletebusroute/<%-busroute.id %>" >
-                                    <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
-                                 </form>
-                              </td>
-                               
-                            </tr>
-                            <% }) %>
-
-   
-                  </tbody>
-               </table>
-                 
-
-         
-       
-
-              <!-- end your content here -->
-             </div>
-
+                           <tr>
+                               <td><%-busroute.source %></td>
+                               <td><%- busroute. destinatin %></td>
+                               <td><%- busroute.bus_name %></td>
+                               <td><%- busroute.depature_date %></td>
+                               <td><%- busroute.seat %></td>
+                               <td><%- busroute.cost %></td>
+                               <td><%- busroute.time %></td>
+                               <td><%- busroute.bus_number %></td>
+                        
+                        
+                               <td>
+                                <a class="btn btn-primary" href="/editbusroutedata/<%-busroute.id%>">Edit</a>  
+                        
+                                <form style="display: inline;" action="/deletebusroute/<%-busroute.id %>" >
+                                   <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
+                                </form>
+                             </td>
+                              
+                           </tr>
+                           <% }) %>
+                    
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
-         </div>
-      </div>
+            
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <%- include('../common/footer.ejs')-%>
 
-        <!-- end your content here -->
-       </div>
 
-      </div>
-   </div>
-</div>
-<%- include('../common/footer.ejs')-%>
+
+
+

@@ -1,64 +1,65 @@
 <%- include('../common/head.ejs')-%>
+<%- include('../common/header.ejs')-%>
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <%- include('../common/sidebar.ejs')-%>
+      <!-- partial -->
 
-      <title> Admin Dashboard</title>
-   </head>
-   <body>
-      
-    <%- include('../common/header.ejs')-%>
-
-      <div class="container-fluid bg-side-nav">
-         <div class="row">
-            <div class="col-lg-2 sidebaare">
+<div class="main-panel">        
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Add New Routes </h4>
+            <p class="card-description">
+              <h10 style=" color: rgb(220, 20, 20);">
+                <%- routeerror %>
+              </h10>
+             
+            </p>
+            <form class="forms-sample"method="post" action="/addbusrouteform">
+              <div class="form-group">
+                <label for="exampleInputUsername1">Source</label>
+                <input type="text" class="form-control"name ="source" id="exampleInputUsername1" placeholder="source">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Destination</label>
+                <input type="text" class="form-control" name ="destination" id="exampleInputEmail1" placeholder="Destination">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Bus_Name</label>
+                <input type="text" class="form-control" name ="bus_name" id="exampleInputPassword1" placeholder="Bus Name ">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Departure_date</label>
+                <input type="date" class="form-control" name ="depature_date" min="2024-05-20" id="exampleInputPassword1" placeholder="Departure_Date">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Seat</label>
+                <input type="text" class="form-control" name ="seat" id="exampleInputPassword1" placeholder="seat">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Time</label>
+                <input type="time" class="form-control" name ="time" id="exampleInputPassword1" placeholder="Time">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">bus_number</label>
+                <input type="text" class="form-control" name ="busnumber" id="exampleInputPassword1" placeholder="Bus_number">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Cost</label>
+                <input type="text" class="form-control" name ="cost" id="exampleInputPassword1" placeholder="Cost">
+              </div>
               
-
-                <%- include('../common/sidebar.ejs')-%>
-            </div>
-            <div class="col-lg-10">
-
-              <div class="dashboard-content-area">
-                <!-- put your contente -->
-
-               <h1 class="mb-2 mt-2">Add Page</h1>
-    
-    <form method="post" action="/addbusrouteform">
-
-      <div class="mb-3 mt-3 row g-9 align-items-center">  
-        <div class="col col-lg-2"><label class="form-label">Source </label></div>
-        <div class="col"><input type="text" name ="source" class="form-control" placeholder="enter the source address"></div>
-      </div>
-
-      <div class="mb-3 mt-3 row g-9 align-items-center">           
-          <div class="col col-lg-2"><label class="form-label">Destination</label></div>
-          <div class="col"><input type="text" name ="destination" class="form-control" placeholder="enter the destination address"></div>
-      </div>
-
-      <div class="mb-3 mt-3 row g-9 align-items-center">
-        <div class="col col-lg-2"><label class="form-label">Bus name</label></div>
-        <div class="col"><input type="text" name ="bus_name" class="form-control" placeholder="enter the bus Name"></div>
-      </div>
-      
-      <div class="mb-3 mt-3 row g-9 align-items-center">
-        <div class="col col-lg-2"><label class="form-label">Depature Date</label></div>
-        <div class="col"><input type="date" name ="depature_date" class="form-control" placeholder=""  min="2024-02-10"></div>
-      </div>
-      <div class="mb-3 mt-3 row g-9 align-items-center"> 
-        <div class="col col-lg-2"><label class="form-label">Seat</label></div>
-        <div class="col"><input type="text" name="seat" class="form-control"  placeholder="enter the total seat"></div>
-      </div>
-      
-      <div class="mb-3 mt-3 row g-9 align-items-center"> 
-        <div class="col col-lg-2"><label class="form-label">Cost</label></div>
-        <div class="col"><input type="text" name="cost" class="form-control"  placeholder="enter the Cost"></div>
-      </div>
-      
+             
+              
+              <button type="submit" class="btn btn-primary me-2">Submit</button>
+             
+            </form>
      
-
-      <div class="mb-5 mt-3 align-items-center text-center"> 
-           <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
       </div>
-  </form>
-
-              <!-- end your content here -->
-              <%- include('../common/footer.ejs')-%>
-   </body>
-</html>
+      
+<%- include('../common/footer.ejs')-%>

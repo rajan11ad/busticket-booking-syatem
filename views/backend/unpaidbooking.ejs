@@ -1,0 +1,98 @@
+
+<%- include('../common/head.ejs')-%>
+<%- include('../common/header.ejs')-%>
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <%- include('../common/sidebar.ejs')-%>
+      <!-- partial -->
+      
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Bus Booking Status</h4>
+                  <p class="card-description">
+                    <a href="/addcustomerdata/" type="button" class="btn btn-success">Add Booking </a>
+                   
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Name
+                          </th>
+                          <th>
+                           Email
+                          </th>
+                          <th>
+                            Mobile_No 
+                          </th>
+                          <th>
+                            Boarding_point
+                          </th>
+                          <th>
+                            Seat 
+                          </th>
+                          <th>
+                            Amount
+                          </th>
+                          <th>
+                            Route 
+                          </th>
+                          <th>
+                            Depature_date 
+                          </th>
+                          <th>
+                            Travels
+                          </th>
+                          <th>
+                            Payment Status
+                          </th>
+                          <th>
+                          Bus Number
+                          </th>
+                          <th>
+                        Time
+                         </th>
+                         <th>
+                          Action
+                         </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% unpaidbooking.forEach((customer)=>{ %>
+                           <tr>
+                              <td><%- customer.name %></td>
+                              <td><%- customer.email %></td>
+                             <td> <%- customer.mobile_No %></td>
+                             <td> <%- customer.boarding_point %></td>
+                             <td> <%- customer.seat %></td>
+                             <td> <%- customer.Amount %></td>
+                             <td> <%- customer.route %></td>
+                             <td> <%- customer.depature_date %></td>
+                             <td> <%- customer.bus_name %></td>
+                             <td> <%- customer.paymentstatus %></td>
+                             <td> <%- customer.busnumber %></td>
+                             <td> <%- customer.time %></td>
+                              <td>
+                                 <a class="btn btn-primary" href="/editcustomerdata/<%-customer.id %>">Edit</a>                     
+                                 <a class="btn btn-danger ml-2" href="/deletecustomerdata/<%-customer.id %>">Delete</a>   
+                                
+                             
+                              </td>
+                           </tr>
+                           <%  }) %>
+                       
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <%- include('../common/footer.ejs')-%>
+
+

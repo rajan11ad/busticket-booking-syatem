@@ -1,0 +1,80 @@
+
+<%- include('../common/head.ejs')-%>
+<%- include('../common/header.ejs')-%>
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <%- include('../common/sidebar.ejs')-%>
+      <!-- partial -->
+      
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Bus Booking Status</h4>
+                  <p class="card-description">
+                    <a href="/addcustomerdata/" type="button" class="btn btn-success">Add Booking </a>
+                   
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                          Id
+                          </th>
+                          <th>
+                      Seat
+                          </th>
+                          <th>
+                         side
+                          </th>
+                          <th>
+                           Status
+                          </th>
+                          <th>
+                            PasymentStatus
+                          </th>
+                          <th>
+                          BusId
+                          </th>
+                          <th>
+                            Customer
+                          </th>
+                         
+                         <th>
+                          Action
+                         </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% unpaidbooking.forEach((customer)=>{ %>
+                           <tr>
+                              <td><%- customer.id %></td>
+                              <td><%- customer.seat %></td>
+                             <td> <%- customer.side %></td>
+                             <td> <%- customer.status %></td>
+                             <td> <%- customer.paymentstatus %></td>
+                             <td> <%- customer.busId %></td>
+                             <td> <%- customer.customer %></td>
+                            
+                              <td>
+                                 <a class="btn btn-primary" href="/editcustomerdata/<%-customer.id %>">Edit</a>                     
+                                 <a class="btn btn-danger ml-2" href="/deletecustomerdata/<%-customer.id %>">Delete</a>   
+                                
+                             
+                              </td>
+                           </tr>
+                           <%  }) %>
+                       
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <%- include('../common/footer.ejs')-%>
+
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bus Ticket</title>
+<link rel="stylesheet" href="ticket-style.css">
+<script>
+function printTicket() {
+    window.print();
+}
+</script>
+<style>body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.ticket {
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ticket-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.ticket-header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.ticket-header p {
+    margin: 5px 0 0;
+    font-weight: normal;
+}
+
+.ticket-body {
+    padding: 10px 20px;
+}
+
+.bus-image {
+    width: 100%; /* Adjust based on your design preferences */
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.ticket-info {
+    background-color: #fff;
+    color: #333;
+}
+
+.info {
+    margin-bottom: 10px;
+}
+
+.info label {
+    font-weight: bold;
+}
+
+.info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.ticket-footer {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #eee;
+    color: #333;
+}
+
+.ticket-footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.print-btn {
+    margin-top: 10px;
+    padding: 5px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.print-btn:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+<div class="ticket">
+    <header class="ticket-header">
+        <h1>Haraiya Bus Service</h1>
+        <p>Ticket for travel</p>
+    </header>
+    <div class="ticket-body">
+       
+        <section class="ticket-info">
+            <div class="info">
+                <label>Passenger:</label>
+                <p><%-ticketinfo.name %></p>
+            </div>
+            <div class="info">
+                <label>Route:</label>
+                <p><%-ticketinfo.route %></p>
+            </div>
+            <div class="info">
+                <label>bus Name:</label>
+                <p><%-ticketinfo.bus_name %></p>
+            </div>
+            <div class="info">
+                <label>Date:</label>
+                <p><%-ticketinfo.depature_date %></p>
+            </div>
+            <div class="info">
+                <label>Amount:</label>
+                <p><%-ticketinfo.Amount %></p>
+            </div>
+            <div class="info">
+                <label>Seat Number:</label>
+                <p><%-ticketinfo.seat %></p>
+            </div>
+            <div class="info">
+                <label>Time:</label>
+                <p><%-ticketinfo.time %></p>
+            </div>
+            <div class="info">
+                <label>Bus Number:</label>
+                <p><%-ticketinfo.busnumber %></p>
+            </div>
+            <div class="info">
+                <label>Boarding_point:</label>
+                <p><%-ticketinfo.boarding_point %></p>
+            </div>
+            <div class="info">
+                <label>payment satus:</label>
+                <p><%-ticketinfo.paymentstatus %></p>
+            </div>
+        </section>
+    </div>
+    <footer class="ticket-footer">
+        <p>Thank you for choosing Haraiya Bus Service!</p>
+        <button onclick="printTicket()" class="print-btn">Print Ticket</button>
+    </footer>
+  
+</div>
+</body>
+</html>
+
+
+
+

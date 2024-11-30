@@ -1,10 +1,18 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Ticket Booking - Ticket Information</title>
+    <title>Bus route  Information</title>
     <style>
+        
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -53,7 +61,7 @@
     </style>
 </head>
 <body>
-
+    
     <h2>Bus Ticket Information</h2>
 
     <table>
@@ -63,6 +71,8 @@
                 <th>Destination</th>
                 <th>Bus_Name</th>
                 <th>Date</th>
+                <th>Time</th>
+                <th>Bus_number</th>
                 <th>Price</th>
                 <th>Action</th>
             </tr>
@@ -74,13 +84,20 @@
              <td><%- saerchs.destinatin %></td>
             <td><%- saerchs.bus_name %></td>
             <td><%- saerchs.depature_date %></td>
+            <td><%- saerchs.time %></td>
+            <td><%- saerchs.bus_number %></td>
             <td><%- saerchs.cost %></td>
-            <td><a href="/seatbook?busroutes=<%- saerchs.id %>" class="book-now-btn">Book Now</a></td>
+            <td><a href="/seatbook/<%-saerchs.id%>?source=<%-encodeURIComponent(saerchs.source)%>&destination=<%-encodeURIComponent(saerchs.destinatin)%>&date=<%-encodeURIComponent(saerchs.depature_date)%>&travel=<%-encodeURIComponent(saerchs.bus_name)%>&time=<%-encodeURIComponent(saerchs.time)%>&busnumber=<%-encodeURIComponent(saerchs.bus_number)%>" class="book-now-btn">View Seat</a></td>
+          
 
             </tr>
             <% }) %>
         </tbody>
     </table>
-
+   
+        
 </body>
 </html>
+
+
+
